@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Meadow 100</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html,body{height:100%;margin:0;background:#0b1226;color:#f2f5f8;font:14px system-ui,sans-serif;overflow:hidden}
+canvas{display:block}
+#hud{position:fixed;left:12px;bottom:12px;background:rgba(10,16,30,.62);padding:8px 12px;border-radius:8px;line-height:1.5;pointer-events:none;max-width:70vw}
+#fps{position:fixed;left:12px;top:12px;background:rgba(10,16,30,.62);padding:4px 10px;border-radius:8px}
+.overlay{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#0b1226;gap:12px;text-align:center}
+#start{display:none;cursor:pointer;background:rgba(5,9,18,.78)}
+#barwrap{width:260px;height:8px;background:#223;border-radius:4px;overflow:hidden}#bar{height:100%;width:0;background:#7fd16a;transition:width .2s}
+#err{position:fixed;right:12px;bottom:12px;background:#7a1f1f;padding:6px 10px;border-radius:8px;display:none;max-width:50vw;white-space:pre-line}
+</style>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/","lil-gui":"https://cdn.jsdelivr.net/npm/lil-gui@0.19.2/+esm"}}</script>
+</head><body>
+<div id="fps">– fps</div>
+<div id="hud">WASD move · Shift run · Space jump · mouse look (click to capture, or drag)<br><span id="clips"></span></div>
+<div id="load" class="overlay"><div>Loading models…</div><div id="barwrap"><div id="bar"></div></div></div>
+<div id="start" class="overlay"><h1 style="margin:0">Meadow 100</h1><div>Click to play</div></div>
+<div id="err"></div>
+<script type="module" src="main.js"></script>
+</body></html>
